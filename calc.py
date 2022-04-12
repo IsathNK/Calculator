@@ -1,16 +1,32 @@
-firstNum = input("Enter First Number :- ")
-secondNum = input("Enter Second Number :- ")
-exp = input("Enter The Expression(+,-,*,/):  ")
+#Dictionary
+op_convert = {
+    "+" : "add",
+    "-" : "sub",
+    "/" : "div",
+    "*" : "multi",
+}
 
-if exp == "+":
-    value = int(firstNum) + int(secondNum)
-    print("Answer Is: " + str(value))
-elif exp == "-":
-    value = int(firstNum) - int(secondNum)
-    print("Answer Is: " + str(value))
-elif exp == "*":
-    value = int(firstNum) * int(secondNum)
-    print("Answer Is: " + str(value))
-elif exp == "/":
-    value = int(firstNum) / int(secondNum)
-    print("Answer Is: " + str(value))
+#Input Variables
+firstNum = int(input("Enter First Number:"))
+operator = input("Enter The Operator:")
+secondNum = int(input("Enter Second Number:"))
+
+#Functions
+def add():
+    result = firstNum + secondNum
+    print(result)
+def sub():
+    result = firstNum - secondNum
+    print(result)
+def multi():
+    result = firstNum * secondNum
+    print(result)
+def div():
+    result = firstNum / secondNum
+    print(result)
+
+#If Entered A Opertor
+if operator == "+" or "-" or "/" or "*":
+    op = op_convert[operator]
+    eval(op+"()")
+
